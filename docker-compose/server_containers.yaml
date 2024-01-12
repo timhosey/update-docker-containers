@@ -6,6 +6,8 @@ founder:
     - php-apache
     - jdownloader2
     - pyload
+    - immich
+    - duplicati
     #- nocodb
     #- podgrab
     #- tanoshi
@@ -24,7 +26,6 @@ founder:
   compose_path: /disks/storage/docker-compose/founder
 vox:
   basic_update:
-    - immich
     - bazarr
     - tdarr
     - media_hosting
