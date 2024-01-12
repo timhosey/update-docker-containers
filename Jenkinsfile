@@ -1,7 +1,6 @@
-@Library('timhaus-automation') _
+//@Library('timhaus-automation') _
 
 pipeline {
-    agent { label "${AGENT}" }
     triggers {
       cron('H 5 * * 0')
     }
@@ -16,12 +15,30 @@ pipeline {
         //     }
         // }
         
-        stage('Run Ruby') {
-            steps {
-              withCredentials([usernamePassword(credentialsId: 'jenkins-user-auth', passwordVariable: 'pass', usernameVariable: 'username')]) {
-                sh "ruby ./docker-compose/update_docker_container.rb $AGENT $pass"
+        stage('Container upgrades') {
+          parallel {
+            stage('Upgrade Vox') {
+              steps {
+                withCredentials([usernamePassword(credentialsId: 'jenkins-user-auth', passwordVariable: 'pass', usernameVariable: 'username')]) {
+                  sh "ruby ./docker-compose/update_docker_container.rb vox $pass"
+                }
               }
             }
+            stage('Upgrade Founder') {
+              steps {
+                withCredentials([usernamePassword(credentialsId: 'jenkins-user-auth', passwordVariable: 'pass', usernameVariable: 'username')]) {
+                  sh "ruby ./docker-compose/update_docker_container.rb founder $pass"
+                }
+              }
+            }
+            // TODO: Add Dewitt and Comstock
+          }
+          post {
+            always {
+              echo 'Process completed!'
+            }
+          }
+          
         }
     }
 }
