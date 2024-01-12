@@ -16,8 +16,10 @@ pipeline {
         // }
         
         stage('Container upgrades') {
+          agent { label 'master' }
           parallel {
             stage('Upgrade Vox') {
+              agent { label  'vox' }
               steps {
                 withCredentials([usernamePassword(credentialsId: 'jenkins-user-auth', passwordVariable: 'pass', usernameVariable: 'username')]) {
                   sh "ruby ./docker-compose/update_docker_container.rb vox $pass"
@@ -25,6 +27,7 @@ pipeline {
               }
             }
             stage('Upgrade Founder') {
+              agent { label 'founder' }
               steps {
                 withCredentials([usernamePassword(credentialsId: 'jenkins-user-auth', passwordVariable: 'pass', usernameVariable: 'username')]) {
                   sh "ruby ./docker-compose/update_docker_container.rb founder $pass"
