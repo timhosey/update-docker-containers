@@ -1,0 +1,53 @@
+founder:
+  basic_update:
+    - romm
+    - adguardhome
+    - adguardhome-sync
+    - bookstack
+    - freshrss
+    - mariadb
+    - phpmyadmin
+    - nocodb
+    - php-apache
+    - podgrab
+    - jdownloader2
+    - pyload
+    - tanoshi
+    - music_stack
+    - n.eko
+    - nzbhydra
+  manual_update:
+    - jenkins
+    - retrobot
+    - changedetection.io
+    - azuracast
+  compose_path: /disks/storage/docker-compose/founder
+vox:
+  basic_update:
+    - adguardhome
+    - bazarr
+    - tdarr
+    - media_hosting
+    - emby
+    - it-tools
+    - gitea
+    - drawio
+    - library
+    - nextcloud
+    - ombi
+    - photoprism
+    - jackett
+    - homarr
+  # manual_update:
+  #   -
+  compose_path: /disks/storage/docker-compose/vox
+dewitt:
+  basic_update:
+    - ghost
+    - komga
+    - php-apache
+    - audiobookshelf
+  manual_update:
+    - mastodon
+    - lemmy
+  compose_path: /disks/Square/docker-compose/square
