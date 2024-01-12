@@ -7,6 +7,7 @@ pipeline {
   options {
     ansiColor('xterm')
   }
+  agent none
 
   stages {
       // stage('Prep Runtime Env') {
@@ -16,7 +17,6 @@ pipeline {
       // }
       
     stage('Container upgrades') {
-      agent none
       parallel {
         stage('Upgrade Vox') {
           agent { label  'vox' }
