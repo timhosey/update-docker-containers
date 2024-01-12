@@ -1,21 +1,21 @@
 founder:
   basic_update:
-    - romm
-    - adguardhome
-    - adguardhome-sync
-    - bookstack
-    - freshrss
     - mariadb
     - phpmyadmin
-    - nocodb
+    - nzbhydra
     - php-apache
-    - podgrab
     - jdownloader2
     - pyload
-    - tanoshi
-    - music_stack
-    - n.eko
-    - nzbhydra
+    #- nocodb
+    #- podgrab
+    #- tanoshi
+    #- music_stack
+    #- n.eko
+    #- romm
+    #- adguardhome
+    #- adguardhome-sync
+    #- bookstack
+    #- freshrss
   manual_update:
     - jenkins
     - retrobot
@@ -24,29 +24,30 @@ founder:
   compose_path: /disks/storage/docker-compose/founder
 vox:
   basic_update:
-    - adguardhome
+    - immich
     - bazarr
     - tdarr
     - media_hosting
     - emby
     - it-tools
-    - gitea
     - drawio
     - library
     - nextcloud
     - ombi
-    - photoprism
     - jackett
     - homarr
+    #- adguardhome
+    #- gitea
+    #- photoprism
   # manual_update:
   #   -
   compose_path: /disks/storage/docker-compose/vox
 dewitt:
   basic_update:
-    - ghost
     - komga
     - php-apache
     - audiobookshelf
+    #- ghost
   manual_update:
     - mastodon
     - lemmy
