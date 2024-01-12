@@ -8,6 +8,7 @@ founder:
     - pyload
     - immich
     - duplicati
+    - n8n
     #- nocodb
     #- podgrab
     #- tanoshi
