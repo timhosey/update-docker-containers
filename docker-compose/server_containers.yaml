@@ -9,14 +9,14 @@ founder:
     - immich
     - duplicati
     - n8n
+    - adguardhome
+    - adguardhome-sync
     #- nocodb
     #- podgrab
     #- tanoshi
     #- music_stack
     #- n.eko
     #- romm
-    #- adguardhome
-    #- adguardhome-sync
     #- bookstack
     #- freshrss
   manual_update:
@@ -38,7 +38,7 @@ vox:
     - ombi
     - jackett
     - homarr
-    #- adguardhome
+    - adguardhome
     #- gitea
     #- photoprism
   # manual_update:
