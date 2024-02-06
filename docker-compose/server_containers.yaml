@@ -11,6 +11,7 @@ founder:
     - n8n
     - adguardhome
     - adguardhome-sync
+    - emby
     #- nocodb
     #- podgrab
     #- tanoshi
@@ -30,7 +31,6 @@ vox:
     - bazarr
     - tdarr
     - media_hosting
-    - emby
     - it-tools
     - drawio
     - library
@@ -39,8 +39,6 @@ vox:
     - jackett
     - homarr
     - adguardhome
-    #- gitea
-    #- photoprism
   # manual_update:
   #   -
   compose_path: /disks/storage/docker-compose/vox
